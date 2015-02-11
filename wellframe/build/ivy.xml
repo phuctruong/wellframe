@@ -42,17 +42,9 @@
         <dependency org="taglibs" name="standard" rev="1.1.2" />
         <dependency org="struts" name="struts" rev="1.1"><exclude name='jdbc-stdext' /><exclude name='struts-legacy' /></dependency>
 
-        <!-- OPTIONAL LIBRARIES -->
-        <dependency org="org.tuckey" name="urlrewritefilter" rev="3.2.0" />
-        <dependency org="org.jsoup" name="jsoup" rev="1.6.3" />
-        <dependency org="org.apache.commons" name="commons-csv" rev="1.0" />
+        <!-- PROJECT SPECIFIC LIBRARIES -->
+        <dependency org="com.google.guava" name="guava" rev="13.0-rc1" />
+        <dependency org="com.google.code.gson" name="gson" rev="2.2.2" />
 
-        <!-- Selenium Dependencies -->
-        <dependency org="org.seleniumhq.selenium" name="selenium-java" rev="2.44.0" />
-        <dependency org="org.seleniumhq.selenium" name="selenium-remote-driver" rev="2.44.0" />
-
-        <!--
-        <dependency org="org.apache.httpcomponents" name="httpclient" rev="4.1.2" />
-        -->
     </dependencies>
 </ivy-module>
