@@ -1,8 +1,8 @@
-<project name="alumni" default="all" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+<project name="wellframe" default="all" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
    <!-- =================================================================== -->
    <!-- Initialize properties                                               -->
    <!-- =================================================================== -->
-   <property name="PROJECT_NAME" value="alumni" />
+   <property name="PROJECT_NAME" value="wellframe" />
    <!-- Define the project directories and jar file name -->
    <property name="SRC_DIR" value="../src" />
    <property name="LIB_DIR" value="lib" />
@@ -88,8 +88,8 @@
 
    <target name="deploy">
       <echo>Deploying to production</echo>
-      <copy todir="/home/realestate/deploy/alumni/public_html">
-         <fileset dir="/home/realestate/projects/alumni/public_html">
+      <copy todir="/home/realestate/deploy/wellframe/public_html">
+         <fileset dir="/home/realestate/projects/wellframe/public_html">
          </fileset>
       </copy>
    </target>
@@ -147,9 +147,9 @@
    </target>
 
    <target name="check_db"><property name="TEST_CLASS" value="com.zoomlane.database.CheckDatabase" /><antcall target="run_test" /></target>
-   <target name="import_users"><property name="TEST_CLASS" value="com.alumni.util.BatchJobImportUsers" /><antcall target="run_test" /></target>
+   <target name="import_users"><property name="TEST_CLASS" value="com.wellframe.util.BatchJobImportUsers" /><antcall target="run_test" /></target>
    <target name="import_linkedin">
-      <java classname="com.alumni.util.BatchJobImportLinkedIn" fork="yes" maxmemory="1000M">
+      <java classname="com.wellframe.util.BatchJobImportLinkedIn" fork="yes" maxmemory="1000M">
           <sysproperty key="webdriver.chrome.driver" value="../doc/chrome/windows/chromedriver.exe" />
           <jvmarg value="-XX:MaxPermSize=256m" />
          <classpath>
@@ -167,7 +167,7 @@
       </java>
     </target>
 
-   <target name="email"><property name="TEST_CLASS" value="com.alumni.util.BatchJobEmail" /><antcall target="run_test" /></target>
+   <target name="email"><property name="TEST_CLASS" value="com.wellframe.util.BatchJobEmail" /><antcall target="run_test" /></target>
 
    <!-- =================================================================== -->
    <!-- Backup: test-->
