@@ -1,0 +1,48 @@
+A:link { color: #9933CC; text-decoration: underline}  
+A:visited { color: #9933FF; text-decoration: underline}
+A {text-decoration:none;}
+
+A.leftheadinglink:link { color: #FFFFFF;
+background: transparent;
+font-weight: bold;
+text-decoration:none;
+; font-family: Arial, Helvetica, sans-serif; font-size: 13px
+}
+A.leftheadinglink:visited { color: #FFFFFF;
+background: transparent;
+text-decoration:none;
+; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold
+}
+A.leftheadinglink:hover {
+    text-decoration:underline;
+}
+
+A.leftsubheadinglink:link { color: #FFFFFF;
+background: transparent;
+font-weight: normal;
+text-decoration:none;
+; font-family: Arial, Helvetica, sans-serif; font-size: 12px
+}
+A.leftsubheadinglink:visited { color: #FFFFFF;
+background: transparent;
+text-decoration:none;
+; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal
+}
+A.leftsubheadinglink:hover {
+    text-decoration:underline;
+}
+
+
+.bodytext { color: black; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 12px; ; list-style-image: url(../graphics/x_bullet_10.jpg) }
+
+
+A.bodylink:link { color: #0000FF; text-decoration: underline}  
+A.bodylink:visited { color: #0000FF; text-decoration: underline}
+A.bodylink.hover {text-decoration:underline;}
+
+
+.subhead { font-family: Arial, Helvetica, sans-serif; color: #990000; text-decoration: underline ; font-size: 14px; font-weight: bold}
+.heading { font-family: Verdana, Arial, Helvetica, sans-serif; color: #990000; text-decoration: underline }
+.subheading { font-family: Arial, Helvetica, sans-serif; color: #CC0000; font-size: 12px; font-weight: bold}
+.copyrightfont { color: #FFFFFF; font-family: Tahoma, Verdana, Arial; font-style: normal; font-weight: normal; font-size: 7pt; }
+

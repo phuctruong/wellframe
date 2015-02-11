@@ -1,0 +1,184 @@
+<project name="jtemplate" default="all" basedir="../">
+   <!-- =================================================================== -->
+   <!-- Initialize properties                                               -->
+   <!-- =================================================================== -->
+   <property name="PROJECT_NAME" value="jtemplate" />
+   <!-- Define the project directories and jar file name -->
+   <property name="SRC_DIR" value="./src" />
+   <property name="LIB_DIR" value="build/lib" />
+   <property name="RELEASE_DIR" value="build/release" />
+   <property name="APPLICATION_DIR" value="${PROJECT_NAME}" />
+   <property name="WAR_NAME" value="${PROJECT_NAME}.war" />
+   <property name="PROJECT_EAR" value="${PROJECT_NAME}.ear" />
+   <property name="PUBLIC_HTML" value="public_html" />
+   <property name="CLASSES_DIR" value="${PUBLIC_HTML}/WEB-INF/classes" />
+   <property name="WEB_LIB_DIR" value="${PUBLIC_HTML}/WEB-INF/lib" />
+   <property name="PROJECT_JAR" value="${LIB_DIR}/${PROJECT_NAME}.jar" />
+   <property name="WEB_VERSION_FILE_TEMPLATE"  value="${PUBLIC_HTML}/_admin/version.template" />
+   <property name="WEB_VERSION_FILE"  value="${PUBLIC_HTML}/_admin/version.html" />
+   <!-- Setup the class path -->
+
+   <!-- =================================================================== -->
+   <!-- Build all                                                           -->
+   <!-- =================================================================== -->
+   <target name="all" depends="compile" description="Build All">
+   </target>
+
+   <!-- =================================================================== -->
+   <!-- Compile source                                                      -->
+   <!-- =================================================================== -->
+   <target name="compile" description="Build Classes" >
+      <echo>
+      Compiling using class path: 
+      </echo>
+      <mkdir dir="${CLASSES_DIR}"/>
+      <javac debug="on" deprecation="on" srcdir="${SRC_DIR}" destdir="${CLASSES_DIR}">
+         <classpath>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+               <exclude name="${PROJECT_JAR}"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+         </classpath>
+      </javac>
+      <copy todir="${CLASSES_DIR}">
+         <fileset dir="${SRC_DIR}">
+            <exclude name="**/*.java" />
+         </fileset>
+      </copy>
+      <jar jarfile="${PROJECT_JAR}"
+           basedir="${CLASSES_DIR}"
+           compress="false"
+           includes="**/*"
+           />
+   </target>
+
+   <!-- =================================================================== -->
+   <!-- Clean classes and jar file                                          -->
+   <!-- =================================================================== -->
+   <target name="clean" description="Clean class files">
+      <delete file="${PROJECT_JAR}"/>
+      <delete dir="${CLASSES_DIR}"/>
+   </target>
+
+   <!-- =================================================================== -->
+   <!-- Core code for startup                                    -->
+   <!-- =================================================================== -->
+   <target name="run" depends="compile">
+      <echo>Running Test</echo>
+      <java classname="com.knowgate.hipergate.datamodel.ModelManager" fork="yes">
+         <arg line="c:/projects/gate/build/hipergate.cnf create database" />
+         <classpath>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>            
+         </classpath>
+      </java>
+   </target>
+
+
+   <!-- =================================================================== -->
+   <!-- Core code for startup                                    -->
+   <!-- =================================================================== -->
+   <target name="tcp_monitor">
+      <echo>Running Test</echo>
+      <java classname="org.apache.axis.utils.tcpmon" fork="yes">
+         <arg value="8082" />
+         <arg value="localhost" />
+         <arg value="8080" />
+         <classpath>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+         </classpath>
+      </java>
+   </target>
+
+   <!-- =========================================================== -->
+   <!-- Build WAR: compile the web application into a deployable war file                    -->
+   <!-- =========================================================== -->
+   <target name="build_war" depends="compile, update_version_files" description="Build WAR">
+      <mkdir dir="${RELEASE_DIR}" />
+       <war warfile="${RELEASE_DIR}/${WAR_NAME}" webxml="${PUBLIC_HTML}/WEB-INF/web.xml"> <!-- NOT NEEDED:  manifest="${PUBLIC_HTML}/META-INF/MANIFEST.MF" -->
+           <fileset dir="${PUBLIC_HTML}">
+               <exclude name="**/web.xml"/>
+           </fileset>
+       </war>
+    </target>
+
+   <!-- =========================================================== -->
+   <!-- update version                                              -->
+   <!-- =========================================================== -->
+   <target name="update_version_files" description="Update the version files">
+       <!-- TODAY is set somewhere else, not sure where -->
+       <tstamp>
+            <format property="VERSION_RELEASE_TIME" pattern="MM/dd/yyyy hh:mm:ss aa"/>
+       </tstamp>
+       <echo>Updating version file: ${WEB_VERSION_FILE_TEMPLATE} -> ${WEB_VERSION_FILE}</echo>
+       <delete file="${WEB_VERSION_FILE}" />
+       <copy file="${WEB_VERSION_FILE_TEMPLATE}" tofile="${WEB_VERSION_FILE}" />
+       <replace file="${WEB_VERSION_FILE}" token="BUILD_DATE" value="${VERSION_RELEASE_TIME}"/>
+   </target>
+
+   <!-- =========================================================== -->
+   <!-- build ear                                               -->
+   <!-- =========================================================== -->
+   <target name="build_ear" depends="build_war">
+       <echo> Building EAR ${PROJECT_EAR} </echo>
+       <jar jarfile="${RELEASE_DIR}/${PROJECT_EAR}" compress="false" >
+           <!-- Include the application.xml deployment information file -->
+           <fileset dir="${APPLICATION_DIR}">
+               <include name="META-INF/application.xml"/>
+           </fileset>
+           <!-- NOT NEEDED FOR NOW: Include all common libraries 
+           <fileset dir="${APPLICATION_DIR}">
+               <include name="library/**.jar"/>
+           </fileset>
+           -->
+           <!-- Include released ejb and war libraries -->
+           <fileset dir="${RELEASE_DIR}">
+               <include name="${WAR_NAME}"/>
+           </fileset>
+       </jar>
+    </target>
+
+   <!-- =================================================================== -->
+   <!-- Javawriter (Generated source                                        -->
+   <!-- =================================================================== -->
+   <target name="javawriter" description="Generated java code" >
+     <property name="JAVAWRITER_CONFIG_XML" value="javawriter" />
+     <property name="JAVAWRITER_TEMPLATES" value="javawriter/templates/src,javawriter/templates" />
+     <property name="JAVAWRITER_DESTINATION" value="src" />
+     <mkdir dir="${JAVAWRITER_DESTINATION}" />
+     <echo>
+         java -Dconfig_xml=${JAVAWRITER_CONFIG_XML} -Dtemplates=${JAVAWRITER_TEMPLATES} -Ddestination_dir=${JAVAWRITER_DESTINATION}  com.zoomlane.template.JavaWriter
+     </echo>
+     <java classname="com.zoomlane.template.JavaWriter" fork="yes">
+         <sysproperty key="destination" value="${JAVAWRITER_DESTINATION}" />
+         <sysproperty key="config_xml" value="${JAVAWRITER_CONFIG_XML}" />
+         <sysproperty key="templates" value="${JAVAWRITER_TEMPLATES}" />
+         <classpath>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>            
+         </classpath>
+     </java>
+   </target>
+
+</project>
+

@@ -1,0 +1,66 @@
+.topnav {color: #000099;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+font-size:  18px;
+}
+
+.leftnav {color: blue;
+font-family: Verdana;
+font-style: Normal;
+font-weight: Normal;
+font-size:  8pt;
+}
+
+
+
+A {text-decoration:none;}
+A:hover {color: yellow; text-decoration: none; background-color: red}
+
+.trtop { background:#191970; color:#191970 }
+.tr1 { background:#FFFFFF; color:#FFFFFF  }
+.tr2 { background:#D4D4D4; color:#D4D4D4 }
+
+
+.olink  { font-size: 10px; font-family: Verdana}
+.olink a:hover { color: green; text-decoration: underline; background-color: transparent }
+
+
+
+.content { color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 10px; }
+.heading { color: #000066; font-family: Verdana, Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 12px; ; text-decoration: underline}
+.tableContent { color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 10px; ; background-color: #CCCCCC}
+.tableContent2 { color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 10px; ; background-color: #EFEFEF}
+.tableHeading { color: #FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 12px; ; background-color: #0066FF }
+.tableLabel { color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 11px; ; background-color: #99CCFF}
+.tableLabel2 { color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 11px; ; background-color: #BFDFFF}
+.topnavContent { color: #0000CC; font-family: Verdana; font-style: normal; font-weight: bold; font-size: 10px; }
+
+.formButton
+{ 
+	font-size:9pt; 
+	color: white; 
+	border-color: #D4D4D4; 
+	background-color: #0000FF; 
+	font-weight: 600; 
+}
+
+.popUpButton
+{ 
+	font-size:9pt; 
+	color: #FFFFFF; 
+	border-color: #D4D4D4; 
+	background-color: #0066FF; 
+	font-weight: 600; 
+}
+
+.selectList
+{ 
+	font-size:9pt; 
+	color: #0000CC; 
+	border-color: white; 
+	background-color: #D4D4D4; 
+	font-weight: 600; 
+}
+
+.errorMessage { color: #FF0000; font-family: Verdana, Arial, Helvetica, sans-serif; font-style: normal; font-weight: normal; font-size: 10px; }

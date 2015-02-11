@@ -1,0 +1,92 @@
+<zoomlane>
+
+  <!-- ========================= Log4J Configuration ========================== -->
+   <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/' disableOverride="false">
+      <category name="com.alumni"><priority value ="debug" /></category>
+      <category name="com.alumni.dao"><priority value ="info" /></category>
+      <root><priority value ="INFO" /><appender-ref ref="SYSTEM_OUT" /><appender-ref ref="DEBUG_FILE" /></root>
+
+      <!-- ==================  SYSTEM_OUT APPENDER ================== -->
+      <appender name="SYSTEM_OUT" class="org.apache.log4j.ConsoleAppender">
+         <layout class="org.apache.log4j.PatternLayout"><param name="ConversionPattern" value="%m%n (%c:%L)"/></layout>
+      </appender>
+
+      <!-- ==================  DEBUG FILE APPENDER ================== -->
+      <appender name="DEBUG_FILE" class="org.apache.log4j.RollingFileAppender">
+          <param name="File" value="alumni.log" />
+          <param name="MaxFileSize" value="3000KB" />
+          <param name="MaxBackupIndex" value="1" />
+          <layout class="org.apache.log4j.PatternLayout">
+              <param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss,SSSS} [%p] %-30c - %m%n"/>
+          </layout>
+      </appender>
+    </log4j:configuration>
+
+    <property name="JspDebug.level" value="0" />
+
+    <!-- ========================= System Settings ========================== -->
+	<property name="filesystem.storage" value="/mnt/db3_realestate/files/alumni" />
+    <property name="filesystem.baseUrl" value="/files" />
+    <property name="filesystem.upload" value="/mnt/db3_realestate/upload/alumni" />
+
+    <!-- ========================= Mail Configuration ========================== -->
+    <property name="mail.server" value="smtp.gmail.com" />
+    <property name="mail.port" value="465" />
+    <property name="mail.server.header" value="" />
+    <property name="mail.ssl" value="1" />
+    <property name="mail.username" value="harvardae" />
+    <property name="mail.password" value="harvard1234" />
+    <property name="mail.debug" value="0" />
+    <property name="mail.logfile" value="c:/homes_email.log" />
+
+  <!-- ========================= Database Pools Configuration ========================== -->
+    <property name="database.defaultPool" value="alumni" />
+    <property name="database.defaultReadOnlyPool" value="alumni" />
+    <property name="database.sequenceType" value="mysql" />
+    
+    <property name="database.pools" value="alumni" />
+    
+    <property name="database.logQueriesLongerThan" value="100" />
+    <property name="database.trackQueryMetrics" value="1" />
+
+    <!-- ============ Database ================ -->
+    <property name="database.pool.alumni.url" value="jdbc:mysql://localhost/alumni" />
+    <property name="database.pool.alumni.user" value="zoomlane" />
+    <property name="database.pool.alumni.password" value="late2eat" />
+    <property name="database.pool.alumni.maxconn" value="50" />
+    <property name="database.pool.alumni.driver" value="com.mysql.jdbc.Driver" />
+    <property name="database.pool.alumni.idletimeout" value="2" />
+    <property name="database.pool.alumni.checktimeout" value="10000" />
+    <property name="database.pool.alumni.maxcheckout" value="20" />
+    
+    <!-- ================================================================== -->
+    <!-- =============================  www3 ============================= -->
+    <!-- ================================================================== -->
+    <host name="www3">
+       <property name="database.trackQueryMetrics" value="1" />
+       <property name="mail.debug" value="0" />
+
+       <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/' disableOverride="false">
+          <category name="com.alumni"><priority value ="info" /></category>
+          <root><priority value ="INFO" /><appender-ref ref="SYSTEM_OUT" /><appender-ref ref="DEBUG_FILE" /></root>
+
+          <!-- ==================  SYSTEM_OUT APPENDER ================== -->
+          <appender name="SYSTEM_OUT" class="org.apache.log4j.ConsoleAppender">
+             <layout class="org.apache.log4j.PatternLayout"><param name="ConversionPattern" value="%m%n (%c:%L)"/></layout>
+          </appender>
+
+          <!-- ==================  DEBUG FILE APPENDER ================== -->
+          <appender name="DEBUG_FILE" class="org.apache.log4j.RollingFileAppender">
+              <param name="File" value="/home/realestate/logs/alumni.log" />
+              <param name="MaxFileSize" value="3000KB" />
+              <param name="MaxBackupIndex" value="1" />
+              <layout class="org.apache.log4j.PatternLayout">
+                  <param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss,SSSS} [%p] %-30c - %m%n"/>
+              </layout>
+          </appender>
+        </log4j:configuration>
+
+    </host>
+
+</zoomlane>
+

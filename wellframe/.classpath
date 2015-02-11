@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="jtemplate/src"/>
+	<classpathentry kind="lib" path="build/lib/ivy-2.3.0-rc1.jar"/>
+	<classpathentry kind="lib" path="build/lib/servlet.jar"/>
+	<classpathentry kind="lib" path="jtemplate/build/lib/servlet.jar"/>
+	<classpathentry kind="lib" path="jtemplate/public_html/WEB-INF/lib/datafile.jar"/>
+	<classpathentry kind="lib" path="jtemplate/public_html/WEB-INF/lib/junit.jar"/>
+	<classpathentry kind="lib" path="jtemplate/public_html/WEB-INF/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="jtemplate/public_html/WEB-INF/lib/struts.jar"/>
+	<classpathentry kind="lib" path="jtemplate/public_html/WEB-INF/lib/xerces.jar"/>
+	<classpathentry kind="lib" path="jtemplate/public_html/WEB-INF/lib/zoomlane.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

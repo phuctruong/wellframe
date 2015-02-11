@@ -1,0 +1,23 @@
+<javawriterfile>
+
+<!-- =================================================================== -->
+<!-- Define all the token groups                                         -->
+<!-- Tokens are inherited by the creation files                          -->
+<!-- =================================================================== -->
+<!-- The file information -->
+
+<entity name="SelectOptionsFactory">
+    <property type="classInfo" package="com.alumni" description="The projects"/>
+    <property type="list" className="User" actualValue="UserKey" displayValue="Username" />
+    <property type="list" className="Event" actualValue="EventKey" displayValue="Name" />
+</entity>
+
+
+<!-- =================================================================== -->
+<!-- New Struts based framework                                              -->
+<!-- =================================================================== -->
+<createfile defaultEntity="SelectOptionsFactory" template="com/templates/base/taglib/SelectOptionsFactoryBase.java" filename="com/alumni/base/taglib/SelectOptionsFactoryBase.java" />
+<createfile defaultEntity="SelectOptionsFactory" overwrite="no" template="com/templates/base/taglib/SelectOptionsFactory.java" filename="com/alumni/base/taglib/SelectOptionsFactory.java" />
+
+</javawriterfile>
+

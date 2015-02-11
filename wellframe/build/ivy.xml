@@ -1,0 +1,58 @@
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.    
+-->
+<ivy-module version="2.0">
+    <info organisation="org.apache" module="hello-ivy"/>
+     <configurations defaultconfmapping="default">
+        <conf name="default"/>
+        <conf name="java6" extends="default" description="Java 6 dependencies"/>
+        <conf name="eclipse" description="Special dependencies in Eclipse"/>
+        <conf name="utest" extends="eclipse" description="Unit testing dependencies"/>
+    </configurations>
+    <dependencies>
+
+        <!-- CORE LIBRARIES: Back end -->
+        <dependency org="javax.mail" name="mail" rev="1.4.5" />
+        <dependency org="mysql" name="mysql-connector-java" rev="5.0.7" />
+        <dependency org="junit" name="junit" rev="4.8.2" />
+        <dependency org="log4j" name="log4j" rev="1.2.16" />
+        <dependency org="commons-dbcp" name="commons-dbcp" rev="1.2.2" />
+        <dependency org="commons-pool" name="commons-pool" rev="1.3" />
+        <dependency org="jdom" name="jdom" rev="1.1" />
+        <dependency org="oro" name="oro" rev="2.0.8" />
+        <dependency org="xerces" name="xercesImpl" rev="2.9.1" />
+
+        <!-- CORE LIBRARIES: Front end -->
+        <dependency org="jstl" name="jstl" rev="1.1.2" />
+        <dependency org="taglibs" name="standard" rev="1.1.2" />
+        <dependency org="struts" name="struts" rev="1.1"><exclude name='jdbc-stdext' /><exclude name='struts-legacy' /></dependency>
+
+        <!-- OPTIONAL LIBRARIES -->
+        <dependency org="org.tuckey" name="urlrewritefilter" rev="3.2.0" />
+        <dependency org="org.jsoup" name="jsoup" rev="1.6.3" />
+        <dependency org="org.apache.commons" name="commons-csv" rev="1.0" />
+
+        <!-- Selenium Dependencies -->
+        <dependency org="org.seleniumhq.selenium" name="selenium-java" rev="2.44.0" />
+        <dependency org="org.seleniumhq.selenium" name="selenium-remote-driver" rev="2.44.0" />
+
+        <!--
+        <dependency org="org.apache.httpcomponents" name="httpclient" rev="4.1.2" />
+        -->
+    </dependencies>
+</ivy-module>

@@ -1,0 +1,53 @@
+<javawriterfile>
+    <entity name="User">
+        <property type="classInfo" package="com.alumni" className="User" baseEntityClass="BaseDao" />
+        <property type="tableInfo" tableName="user" />
+        <property type="field" dataType="long" pk="true" functionName="UserKey" searchType="TextLike" searchDisplayInResults="true" />
+
+        <property type="field" dataType="long" functionName="UserType" inputType="select" inputRequired="false" selectOptionsList="UserType" prependOptions="=None" searchType="MultipleOr" searchSize="10" searchDisplayInResults="true" />
+
+        <property type="field" dataType="string" functionName="Username" length="128" description="Username" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="true" />
+        <property type="field" dataType="string" functionName="Password" length="128" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="false" />
+
+        <!-- ===================== PERSONAL INFO ================================= -->
+        <property type="field" dataType="string" functionName="FirstName" length="128" inputRequired="true" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="true" />
+        <property type="field" dataType="string" functionName="LastName" length="128" inputRequired="true" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="true" />
+        <property type="field" dataType="string" functionName="Email" length="255" inputRequired="true" zlValidate="Email" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="true" />
+
+        <property type="field" dataType="date" functionName="LastLogin" dateFormat="MM/dd/yyyy hh:mm aa" inputType="text" inputSize="30" javascriptCalendar="basic" searchType="dateRange" searchDisplayInResults="true" />
+        <property type="field" dataType="date" functionName="LastUpdated" isModifyDate="true" dateFormat="MM/dd/yyyy K:mm a" searchDisplayInResults="true"  />
+        <property type="field" dataType="date" functionName="DateCreated" isCreateDate="true" dateFormat="MM/dd/yyyy hh:mm aa" inputType="text" inputSize="30" javascriptCalendar="basic" searchType="dateRange" searchDisplayInResults="true" />
+    </entity>
+
+
+    <!-- =================================================================== -->
+    <!-- Create necessary files                                              -->
+    <!-- =================================================================== -->
+    <createfile defaultEntity="User" template="../sql/sample_data.sql" filename="sql/sample_data_User.sql" />
+    <createfile defaultEntity="User" template="../sql/mysql_create_table.sql" filename="sql/create_User.sql" />
+    <createfile defaultEntity="User" template="com/templates/dao/DaoProperties.java" filename="com/alumni/dao/UserProperties.java" />
+    <createfile overwrite="no" defaultEntity="User" template="com/templates/dao/DynaDao.java" filename="com/alumni/dao/User.java" />
+    <createfile defaultEntity="User" template="com/templates/dao/_test/Dao_test.java" filename="com/alumni/dao/_test/User_test.java" />
+
+    <!-- ==================== New Struts implementation =================== -->
+    <createfile defaultEntity="User" template="public_html/WEB-INF/daostruts-config.xml" filename="../public_html/WEB-INF/base_tmp/User_struts-config.xml" />
+    <createfile defaultEntity="User" template="public_html/base/DaoDisplay.jsp" filename="../public_html/base/UserDisplay.jsp" />
+    <createfile defaultEntity="User" template="public_html/base/DaoEdit.jsp" filename="../public_html/base/UserEdit.jsp" />
+    <createfile defaultEntity="User" template="public_html/base/DaoSearch.jsp" filename="../public_html/base/UserSearch.jsp" />
+    <createfile defaultEntity="User" template="public_html/base/DaoSearchResults.jsp" filename="../public_html/base/UserSearchResults.jsp" />
+    <createfile defaultEntity="User" template="com/templates/base/action/DaoDelete.java" filename="com/alumni/base/action/UserDelete.java" />
+    <createfile defaultEntity="User" template="com/templates/base/action/DaoDisplay.java" filename="com/alumni/base/action/UserDisplay.java" />
+    <createfile defaultEntity="User" template="com/templates/base/action/DaoEdit.java" filename="com/alumni/base/action/UserEdit.java" />
+    <createfile defaultEntity="User" template="com/templates/base/action/DaoSave.java" filename="com/alumni/base/action/UserSave.java" />
+    <createfile defaultEntity="User" template="com/templates/base/action/DaoSearchForm.java" filename="com/alumni/base/action/UserSearchForm.java" />
+    <createfile defaultEntity="User" template="com/templates/base/action/DaoSearchPerform.java" filename="com/alumni/base/action/UserSearchPerform.java" />
+    <createfile defaultEntity="User" template="com/templates/base/action/DaoSearchResults.java" filename="com/alumni/base/action/UserSearchResults.java" />
+
+    <!-- Ajax Support -->
+    <createfile defaultEntity="User" template="public_html/base/DaoAjaxEdit.jsp" filename="../public_html/base/UserAjaxEdit.jsp" />
+    <createfile defaultEntity="User" template="public_html/base/inc_DaoAjaxDisplay.jsp" filename="../public_html/base/inc_UserAjaxDisplay.jsp" />
+    <createfile defaultEntity="User" template="public_html/base/inc_DaoAjaxEdit.jsp" filename="../public_html/base/inc_UserAjaxEdit.jsp" />
+    <createfile defaultEntity="User" template="com/templates/base/action/DaoAjaxSave.java" filename="com/alumni/base/action/UserAjaxSave.java" />
+
+</javawriterfile>
+

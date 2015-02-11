@@ -1,0 +1,65 @@
+.treeview {
+    margin: 0;
+}
+.treeview ul { /*CSS for Simple Tree Menu*/
+margin: 0;
+padding: 0;
+}
+
+.treeview li { /*Style for LI elements in general (excludes an LI that contains sub lists)*/
+background: white url('../images/tree/list.gif') no-repeat left center;
+list-style-type: none;
+padding-left: 15px;
+margin-bottom: 3px;
+font-size: 12px;
+
+}
+
+
+.treeview li.submenu{ /* Style for LI that contains sub lists (other ULs). */
+background: white url('../images/tree/closed.png') no-repeat left 1px;
+cursor: hand !important;
+cursor: pointer !important;
+font-weight: bold;
+margin-bottom: 6px;
+}
+
+
+.treeview li.submenu ul{ /*Style for ULs that are children of LIs (submenu) */
+display: none; /*Hide them by default. Don't delete. */
+}
+
+.treeview .submenu ul li{ /*Style for LIs of ULs that are children of LIs (submenu) */
+cursor: default;
+font-weight: normal;
+padding-top: 2px;
+margin-left: 15px;
+}
+
+.sideIcon{
+	margin-left: 5px;
+
+	padding-left: 18px;
+}
+
+
+.profileIcon{
+	background: url('../images/icon/profile.png') no-repeat left -1px;
+}
+
+.mailIcon{
+	background: url('../images/icon/mail.png') no-repeat left -1px;
+}
+
+.jobsIcon{
+	background: url('../images/icon/jobs.png') no-repeat left -1px;
+}
+
+.connectionsIcon{
+	background: url('../images/icon/connections.png') no-repeat left -1px;
+	}
+
+.manageJobsIcon{
+	background: url('../images/icon/cubes.png') no-repeat left -1px;
+	}
+

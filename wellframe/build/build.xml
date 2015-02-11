@@ -1,0 +1,195 @@
+<project name="alumni" default="all" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+   <!-- =================================================================== -->
+   <!-- Initialize properties                                               -->
+   <!-- =================================================================== -->
+   <property name="PROJECT_NAME" value="alumni" />
+   <!-- Define the project directories and jar file name -->
+   <property name="SRC_DIR" value="../src" />
+   <property name="LIB_DIR" value="lib" />
+   <property name="PUBLIC_HTML" value="../public_html" />
+   <property name="WEB_INF_DIR" value="${PUBLIC_HTML}/WEB-INF" />
+   <property name="WEB_LIB_DIR" value="${WEB_INF_DIR}/lib" />
+   <property name="CLASSES_DIR" value="${WEB_INF_DIR}/classes" />
+   <!-- Setup the class path -->
+
+
+    <target name="download_libs">
+        <property name="ivy.lib.dir" value="${WEB_LIB_DIR}" />
+        <ivy:retrieve />
+    </target>
+
+    <target name="clean_libs">
+        <delete>
+            <fileset dir="${WEB_LIB_DIR}" includes="*.jar" excludes="zoomlane.jar" />
+        </delete> 
+    </target>
+
+   <!-- =================================================================== -->
+   <!-- Build all                                                           -->
+   <!-- =================================================================== -->
+   <target name="all" depends="compile" description="Build All" />
+
+   <!-- =================================================================== -->
+   <!-- Compile source                                                      -->
+   <!-- =================================================================== -->
+   <target name="compile" description="Build Classes" >
+      <echo>
+      Compiling using class path:
+      </echo>
+      <mkdir dir="${CLASSES_DIR}"/>
+      <javac debug="on" deprecation="on" srcdir="${SRC_DIR}" destdir="${CLASSES_DIR}" source="1.5">
+         <classpath>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+         </classpath>
+      </javac>
+      <copy todir="${CLASSES_DIR}">
+         <fileset dir="${SRC_DIR}">
+            <exclude name="**/*.java" />
+         </fileset>
+      </copy>
+   </target>
+
+   <!-- =================================================================== -->
+   <!-- Clean classes and jar file                                          -->
+   <!-- =================================================================== -->
+   <target name="clean" description="Clean class files">
+      <delete dir="${CLASSES_DIR}"/>
+   </target>
+
+   <!-- =================================================================== -->
+   <!-- Core code for startup                                    -->
+   <!-- =================================================================== -->
+   <target name="tcp_monitor">
+      <echo>Running Test</echo>
+      <java classname="org.apache.axis.utils.tcpmon" fork="yes">
+         <arg value="8082" />
+         <arg value="localhost" />
+         <arg value="8080" />
+         <classpath>
+             <dirset dir="${CLASSES_DIR}">
+                 <include name="**"/>
+             </dirset>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+         </classpath>
+      </java>
+   </target>
+
+   <target name="deploy">
+      <echo>Deploying to production</echo>
+      <copy todir="/home/realestate/deploy/alumni/public_html">
+         <fileset dir="/home/realestate/projects/alumni/public_html">
+         </fileset>
+      </copy>
+   </target>
+
+
+   <!-- =================================================================== -->
+   <!-- Javawriter (Generated source                                        -->
+   <!-- =================================================================== -->
+   <target name="javawriter" description="Generated java code" >
+      <property name="JAVAWRITER_CONFIG_XML" value="../javawriter" />
+      <property name="JAVAWRITER_TEMPLATES" value="../jtemplate/src,../jtemplate" />
+      <property name="JAVAWRITER_DESTINATION" value="../src" />
+      <mkdir dir="${JAVAWRITER_DESTINATION}" />
+      <echo>
+         java -Dconfig_xml=${JAVAWRITER_CONFIG_XML} -Dtemplates=${JAVAWRITER_TEMPLATES} -Ddestination_dir=${JAVAWRITER_DESTINATION}  com.zoomlane.template.JavaWriter
+      </echo>
+      <java classname="com.zoomlane.template.JavaWriter" fork="yes">
+         <sysproperty key="destination" value="${JAVAWRITER_DESTINATION}" />
+         <sysproperty key="config_xml" value="${JAVAWRITER_CONFIG_XML}" />
+         <sysproperty key="templates" value="${JAVAWRITER_TEMPLATES}" />
+         <classpath>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+         </classpath>
+      </java>
+      <antcall target="javawriter_post" />
+   </target>
+
+   <target name="javawriter_post">
+      <property name="JAVAWRITER_TEMPLATES_DIR" value="../jtemplate" />
+      <!-- Database creates -->
+      <delete file="${SRC_DIR}/sql/create_all.sql" />
+      <concat destfile="${SRC_DIR}/sql/create_all.sql" >
+         <fileset dir="${SRC_DIR}/sql"
+            includes="create*.sql"
+            excludes="create_all.sql"
+            />
+      </concat>
+      <!-- Struts config -->
+      <delete file="${WEB_INF_DIR}/base-config.xml" />
+      <concat destfile="${WEB_INF_DIR}/base-config.xml" >
+         <fileset dir="${JAVAWRITER_TEMPLATES_DIR}/public_html/WEB-INF">
+            <filename name="daostruts-config_start.xml" />
+         </fileset>
+         <fileset dir="${WEB_INF_DIR}/base_tmp" includes="*_struts-config.xml"  />
+         <fileset dir="${JAVAWRITER_TEMPLATES_DIR}/public_html/WEB-INF">
+            <filename name="daostruts-config_end.xml" />
+         </fileset>
+      </concat>
+   </target>
+
+   <target name="check_db"><property name="TEST_CLASS" value="com.zoomlane.database.CheckDatabase" /><antcall target="run_test" /></target>
+   <target name="import_users"><property name="TEST_CLASS" value="com.alumni.util.BatchJobImportUsers" /><antcall target="run_test" /></target>
+   <target name="import_linkedin">
+      <java classname="com.alumni.util.BatchJobImportLinkedIn" fork="yes" maxmemory="1000M">
+          <sysproperty key="webdriver.chrome.driver" value="../doc/chrome/windows/chromedriver.exe" />
+          <jvmarg value="-XX:MaxPermSize=256m" />
+         <classpath>
+             <dirset dir="${CLASSES_DIR}">
+                 <include name="**"/>
+             </dirset>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+         </classpath>
+      </java>
+    </target>
+
+   <target name="email"><property name="TEST_CLASS" value="com.alumni.util.BatchJobEmail" /><antcall target="run_test" /></target>
+
+   <!-- =================================================================== -->
+   <!-- Backup: test-->
+   <!-- =================================================================== -->
+   <target name="run_test">
+      <echo>Running Test ${TEST_CLASS}</echo>
+      <java classname="${TEST_CLASS}" fork="yes" maxmemory="1000M">
+          <jvmarg value="-XX:MaxPermSize=256m" />
+         <classpath>
+             <dirset dir="${CLASSES_DIR}">
+                 <include name="**"/>
+             </dirset>
+            <!-- Add Classpath: common libraries -->
+            <fileset dir="${LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+            <fileset dir="${WEB_LIB_DIR}">
+               <include name="**"/>
+            </fileset>
+         </classpath>
+      </java>
+   </target>
+
+</project>
+

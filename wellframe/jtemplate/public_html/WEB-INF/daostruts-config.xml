@@ -1,0 +1,84 @@
+<!--////** ================= IGNORE CONFIG START =============== -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+
+   <!-- Data Sources -->
+   <data-sources>
+   </data-sources>
+
+   <!-- Form Beans -->
+   <form-beans>
+      <form-bean name="NO_FORM" dynamic="true" type="org.apache.struts.action.DynaActionForm" />
+      <form-bean name="VO_FORM" dynamic="true" type="com.zoomlane.struts.form.DynaObjectForm">
+         <form-property name="vo" type="com.zoomlane.entity.Entity" />
+      </form-bean>
+      <form-bean name="VO_SEARCH_FORM" dynamic="true" type="com.zoomlane.struts.form.DynaSearchForm">
+         <form-property name="vo" type="com.zoomlane.entity.Entity" />
+      </form-bean>
+   </form-beans>
+
+   <!-- Global Exceptions -->
+   <global-exceptions>
+   </global-exceptions>
+
+   <!-- Global Forwards -->
+   <global-forwards>
+   </global-forwards>
+
+   <!-- Action Mappings -->
+   <action-mappings>
+      <!-- ================= IGNORE CONFIG START =============== **////-->
+      <!-- /// <foreachEntityProperty where="type=classInfo">
+      ///   <token name="package" replaceText="com.templates" />
+      ///   <token name="className" replaceText="Dao" />
+      ///   <token name="className" replaceText="entity" replaceTextPattern="JAVA" />
+      ///   <token name="description" replaceText="class_description_here" />
+      ///   <token name="baseEntityClass" replaceText="com.zoomlane.entity.Entity" />
+      ////========================================================================== -->
+      <!-- =================== Dao Actions =========================== -->
+      <action path="/displayDao" type="com.templates.base.action.DaoDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/DaoDisplay.jsp" contextRelative="true"/>
+      </action>
+      <action path="/deleteDao" type="com.templates.base.action.DaoDelete" name="NO_FORM">
+         <forward name="SUCCESS" path="/base/displaySearchResultsDao.do" contextRelative="true"/>
+      </action>
+      <action path="/displayAjaxEditDao" type="com.templates.base.action.DaoDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/DaoAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/ajax-edit-entity" type="com.templates.base.action.DaoDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/inc_DaoAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/ajax-save-entity" type="com.templates.base.action.DaoAjaxSave" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/inc_DaoAjaxDisplay.jsp" contextRelative="true"/>
+         <forward name="FAIL" path="/base/inc_DaoAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/displayEditDao" type="com.templates.base.action.DaoEdit" name="VO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/DaoEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/saveDao" type="com.templates.base.action.DaoSave" name="VO_FORM">
+         <forward name="SUCCESS" path="/base/DaoEdit.jsp" contextRelative="true"/>
+         <forward name="FAIL" path="/base/DaoEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/displaySearchDao" type="com.templates.base.action.DaoSearchForm" name="VO_SEARCH_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/DaoSearch.jsp" contextRelative="true"/>
+      </action>
+      <action path="/redisplaySearchDao" type="com.templates.base.action.DaoSearchForm" name="VO_SEARCH_FORM"  parameter="redisplay">
+         <forward name="DISPLAY_PAGE" path="/base/DaoSearch.jsp" contextRelative="true"/>
+      </action>
+      <action path="/performSearchDao" type="com.templates.base.action.DaoSearchPerform" name="VO_SEARCH_FORM">
+         <forward name="FAIL" path="/base/redisplaySearchDao.do" contextRelative="true"/>
+         <forward name="DISPLAY_SEARCH_RESULTS" path="/base/displaySearchResultsDao.do" contextRelative="true"/>
+      </action>
+      <action path="/displaySearchResultsDao" type="com.templates.base.action.DaoSearchResults" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/DaoSearchResults.jsp" contextRelative="true"/>
+      </action>
+      <!-- /// </foreachEntityProperty>
+      ////========================================================================== -->
+      <!--////** ================= IGNORE CONFIG END =============== -->
+   </action-mappings>
+   <message-resources parameter="ApplicationResources"/>
+</struts-config>
+<!-- ================= IGNORE CONFIG END =============== **////-->
+
