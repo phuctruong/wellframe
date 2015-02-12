@@ -48,7 +48,7 @@ public class ProcessCreateSpamFilterRequest extends BaseAction {
         if (!Util.isBlankOrNull(version)) urlParts.add("version=" + version);
 
         String maxWait = request.getParameter("max_wait");
-        if (!Util.isBlankOrNull(maxWait)) urlParts.add("mail_wait=" + maxWait);
+        if (!Util.isBlankOrNull(maxWait)) urlParts.add("max_wait=" + maxWait);
 
         Gson gson = new Gson();
         String jsonRequest = gson.toJson(spamFilterRequest);
