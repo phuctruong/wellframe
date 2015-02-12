@@ -4,7 +4,7 @@
 <h1>Spam Filter API Test Page</h1>
 
 
-<p>To test the Spam Filter API, copy the URL below by pasting it in your browser or clicking on the "TEST API" button:</p>
+<p>To test the Spam Filter API, enter your emails below and click on "Generate API Request URL", then "Make API Call".</p>
 
 <h2>Step 1: Enter Test Data</h2>
 
