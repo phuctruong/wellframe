@@ -7,17 +7,17 @@
    <!-- The file information -->1
 
    <entity name="Base">
-      <property type="classInfo" package="com.alumni"/>
+      <property type="classInfo" package="com.wellframe"/>
    </entity>
 
 
    <!-- =================================================================== -->
    <!-- Create necessary files                                              -->
    <!-- =================================================================== -->
-   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/action/BaseAction.java" filename="com/alumni/base/action/BaseAction.java" />
-   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/action/SecureAction.java" filename="com/alumni/base/action/SecureAction.java" />
-   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/taglib/ZSelectTag.java" filename="com/alumni/base/taglib/ZSelectTag.java" />
-   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/taglib/ZTextTag.java" filename="com/alumni/base/taglib/ZTextTag.java" />
-   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/taglib/ZWriteTag.java" filename="com/alumni/base/taglib/ZWriteTag.java" />
+   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/action/BaseAction.java" filename="com/wellframe/base/action/BaseAction.java" />
+   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/action/SecureAction.java" filename="com/wellframe/base/action/SecureAction.java" />
+   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/taglib/ZSelectTag.java" filename="com/wellframe/base/taglib/ZSelectTag.java" />
+   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/taglib/ZTextTag.java" filename="com/wellframe/base/taglib/ZTextTag.java" />
+   <createfile overwrite="yes" defaultEntity="Base" template="com/templates/base/taglib/ZWriteTag.java" filename="com/wellframe/base/taglib/ZWriteTag.java" />
 </javawriterfile>
 

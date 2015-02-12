@@ -1,0 +1,142 @@
+[Global]
+CurrentProject=wellframe.vpj
+[ProjectDates]
+wellframe.vpj=20150211171501308
+[ActiveConfig]
+wellframe.vpj=Release
+[TreeExpansion2]
++ wellframe.vpj
+scroll:0
+[State]
+SCREEN: 1920 1080 972 82 948 908 0 0 M 0 0 0 0 1614 796
+CWD: ..\src\com\wellframe\action
+BUFFER: BN="..\src\com\wellframe\action\BaseAction.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.1308 CL=1 LE=0 CX=0 CY=26 WI=5 BI=26 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\src\com\wellframe\util\AppUtil.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.683 CL=2 LE=0 CX=1 CY=0 WI=5 BI=27 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\src\com\benchcore\util\AppUtil.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.20797 CL=2 LE=0 CX=1 CY=18 WI=5 BI=28 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\build\build.xml"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=XML	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=70 ESBU2=-1
+VIEW: LN=.872 CL=63 LE=0 CX=62 CY=16 WI=5 BI=29 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\src\com\benchcore\gson\GsonUtil.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.81 CL=1 LE=0 CX=0 CY=5 WI=5 BI=30 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\src\com\benchcore\gson\ReportAreaGson.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=31 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\src\com\benchcore\gson\ReportAssetClassGson.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.316 CL=1 LE=0 CX=0 CY=18 WI=5 BI=32 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\src\com\benchcore\action\ProcessApi.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.1239 CL=1 LE=0 CX=0 CY=2 WI=5 BI=34 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\src\com\benchcore\gson\ReportGson.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.11089 CL=1 LE=0 CX=0 CY=18 WI=5 BI=35 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\src\com\wellframe\gson\response\EmailResponse.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.215 CL=29 LE=0 CX=28 CY=10 WI=5 BI=37 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\apache-tomcat-6.0.29\conf\server.xml"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=XML	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=70 ESBU2=-1
+VIEW: LN=.13685 CL=77 LE=0 CX=76 CY=15 WI=5 BI=40 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\api\footer.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=40 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.11 CL=8 LE=0 CX=7 CY=2 WI=5 BI=44 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\WEB-INF\web.xml"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=XML	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=70 ESBU2=-1
+VIEW: LN=.938 CL=12 LE=0 CX=11 CY=2 WI=5 BI=46 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\src\com\wellframe\gson\response\SpamFilterResponse.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.301 CL=1 LE=0 CX=0 CY=13 WI=5 BI=49 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\citystream\build\ivy.xml"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=XML	HM=0 MF=616 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=70 ESBU2=-1
+VIEW: LN=.2737 CL=1 LE=0 CX=0 CY=10 WI=5 BI=47 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\citystream\public_html\css\styles.css"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=520 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.741 CL=64 LE=0 CX=63 CY=15 WI=5 BI=50 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\instructions.html"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.8 CL=71 LE=0 CX=70 CY=1 WI=5 BI=51 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\api\spam_filter.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.952 CL=133 LE=0 CX=132 CY=12 WI=5 BI=45 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\WEB-INF\struts-config.xml"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=XML	HM=0 MF=616 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=70 ESBU2=-1
+VIEW: LN=.824 CL=1 LE=0 CX=0 CY=13 WI=5 BI=63 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\api\header.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.429 CL=1 LE=0 CX=0 CY=12 WI=5 BI=43 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\api\ajax_spam_filter_response.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.32 CL=87 LE=0 CX=86 CY=1 WI=5 BI=59 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\api\ajax_spam_filter_request.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.32 CL=57 LE=0 CX=56 CY=1 WI=5 BI=60 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\src\com\wellframe\action\ProcessSpamFilter.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=616 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.1184 CL=32 LE=0 CX=31 CY=11 WI=5 BI=33 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\WEB-INF\urlrewrite.xml"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=XML	HM=0 MF=616 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=70 ESBU2=-1
+VIEW: LN=.1734 CL=1 LE=0 CX=0 CY=7 WI=5 BI=41 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\src\com\wellframe\action\ProcessCreateSpamFilterRequest.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.1210 CL=9 LE=0 CX=8 CY=13 WI=5 BI=62 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\src\com\wellframe\gson\request\SpamFilterRequest.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=616 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.251 CL=42 LE=0 CX=41 CY=12 WI=5 BI=36 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\src\com\wellframe\gson\request\EmailRequest.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=616 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.244 CL=1 LE=0 CX=0 CY=11 WI=5 BI=38 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\_css\styles.css"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=520 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.5453 CL=26 LE=0 CX=25 CY=17 WI=5 BI=58 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\public_html\template\header.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=40 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=55 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\public_html\template\meta.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=616 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=57 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\login.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.736 CL=1 LE=0 CX=0 CY=0 WI=5 BI=56 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\leftnav.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.5339 CL=55 LE=0 CX=54 CY=1 WI=5 BI=39 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\public_html\reports\ajax_show_api_request.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=52 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\build\ivy.xml"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=XML	HM=0 MF=616 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=70 ESBU2=-1
+VIEW: LN=.2309 CL=1 LE=0 CX=0 CY=14 WI=5 BI=42 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\index.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.53 CL=1 LE=0 CX=0 CY=3 WI=5 BI=53 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\public_html\admin\topnav.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=8 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.8 CL=56 LE=0 CX=55 CY=1 WI=5 BI=6 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\public_html\api\get_report_types.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=40 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=54 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="..\..\..\benchcore\public_html\api\overview.jsp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=HTML	HM=0 MF=552 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.995 CL=1 LE=0 CX=0 CY=12 WI=5 BI=48 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 0 1614 398 -1 -1 N  WF=0 WT=2 "Default Fixed Font,10,0,1"
+BUFFER: BN="..\src\com\wellframe\gson\request\EmailRequest.java"
+VIEW: LN=.244 CL=1 LE=0 CX=1 CY=11 WI=184 BI=38 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 398 1614 398 -1 -1 N  WF=0 WT=2 "Default Fixed Font,10,0,1"
+BUFFER: BN="..\src\com\wellframe\action\ProcessCreateSpamFilterRequest.java"
+VIEW: LN=.1501 CL=1 LE=0 CX=1 CY=6 WI=200 BI=62 HT=0 HN=0 HF=0 HC=4
+FILEHIST: 9
+..\public_html\admin\api\ajax_spam_filter_response.jsp
+..\public_html\admin\api\ajax_spam_filter_request.jsp
+..\public_html\admin\api\spam_filter.jsp
+..\src\com\wellframe\action\ProcessSpamFilter.java
+..\src\com\wellframe\action\ProcessCreateSpamFilterApiRequest.java
+..\public_html\WEB-INF\struts-config.xml
+..\src\com\wellframe\gson\request\EmailRequest.java
+..\src\com\wellframe\gson\request\SpamFilterRequest.java
+..\src\com\wellframe\action\ProcessCreateSpamFilterRequest.java

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+
+    <!-- Form Beans -->
+    <form-beans>
+        <form-bean name="VO_FORM" dynamic="true" type="com.zoomlane.struts.form.DynaObjectForm"><form-property name="vo" type="com.zoomlane.entity.Entity" /></form-bean>
+        </form-beans>
+
+
+    
+
+	<!-- Global Exceptions -->
+	<global-exceptions>
+	</global-exceptions>
+
+	<!-- Global Forwards -->
+	<global-forwards>
+        <forward name="ACCESS_DENIED" path="/access-denied.do" />
+        <forward name="SESSION_EXPIRED" path="/session-expired.do" />
+        <forward name="LOGIN" path="/login.do" contextRelative="true" />
+    </global-forwards>
+
+    <!-- Action Mappings -->
+	<action-mappings>
+
+        <action path="/spam-filter-api-test" type="com.wellframe.action.DisplaySpamFilterApiTest">
+            <forward name="DISPLAY_PAGE" path="/admin/api/spam_filter.jsp" />
+        </action>
+
+        <action path="/spam-filter" type="com.wellframe.action.ProcessSpamFilter">
+        </action>
+        <action path="/ajax-create-spam-filter-request" type="com.wellframe.action.ProcessCreateSpamFilterRequest">
+            <forward name="DISPLAY_PAGE" path="/admin/api/ajax_spam_filter_request.jsp" />
+        </action>
+
+
+	</action-mappings>
+	
+	<message-resources parameter="ApplicationResources"/>
+	
+</struts-config>
+
+

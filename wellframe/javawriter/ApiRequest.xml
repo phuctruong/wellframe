@@ -1,0 +1,46 @@
+<javawriterfile>
+    <entity name="ApiRequest">
+        <property type="classInfo" package="com.wellframe" className="ApiRequest" baseEntityClass="BaseDao" />
+        <property type="tableInfo" tableName="api_request" />
+        <property type="field" dataType="long" pk="true" functionName="ApiRequestKey" searchType="TextLike" searchDisplayInResults="true" />
+
+        <property type="field" dataType="string" functionName="Version" length="128" description="ApiRequestname" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="true" />
+        <property type="field" dataType="integer" functionName="MaxWait" length="128" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="false" />
+        <property type="field" dataType="string" functionName="Request" length="text" inputRequired="true" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="false" />
+
+        <property type="field" dataType="date" functionName="LastUpdated" isModifyDate="true" dateFormat="MM/dd/yyyy K:mm a" searchDisplayInResults="true"  />
+        <property type="field" dataType="date" functionName="DateCreated" isCreateDate="true" dateFormat="MM/dd/yyyy hh:mm aa" inputType="text" inputSize="30" javascriptCalendar="basic" searchType="dateRange" searchDisplayInResults="true" />
+    </entity>
+
+
+    <!-- =================================================================== -->
+    <!-- Create necessary files                                              -->
+    <!-- =================================================================== -->
+    <createfile defaultEntity="ApiRequest" template="../sql/sample_data.sql" filename="sql/sample_data_ApiRequest.sql" />
+    <createfile defaultEntity="ApiRequest" template="../sql/mysql_create_table.sql" filename="sql/create_ApiRequest.sql" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/dao/DaoProperties.java" filename="com/wellframe/dao/ApiRequestProperties.java" />
+    <createfile overwrite="no" defaultEntity="ApiRequest" template="com/templates/dao/DynaDao.java" filename="com/wellframe/dao/ApiRequest.java" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/dao/_test/Dao_test.java" filename="com/wellframe/dao/_test/ApiRequest_test.java" />
+
+    <!-- ==================== New Struts implementation =================== -->
+    <createfile defaultEntity="ApiRequest" template="public_html/WEB-INF/daostruts-config.xml" filename="../public_html/WEB-INF/base_tmp/ApiRequest_struts-config.xml" />
+    <createfile defaultEntity="ApiRequest" template="public_html/base/DaoDisplay.jsp" filename="../public_html/base/ApiRequestDisplay.jsp" />
+    <createfile defaultEntity="ApiRequest" template="public_html/base/DaoEdit.jsp" filename="../public_html/base/ApiRequestEdit.jsp" />
+    <createfile defaultEntity="ApiRequest" template="public_html/base/DaoSearch.jsp" filename="../public_html/base/ApiRequestSearch.jsp" />
+    <createfile defaultEntity="ApiRequest" template="public_html/base/DaoSearchResults.jsp" filename="../public_html/base/ApiRequestSearchResults.jsp" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/base/action/DaoDelete.java" filename="com/wellframe/base/action/ApiRequestDelete.java" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/base/action/DaoDisplay.java" filename="com/wellframe/base/action/ApiRequestDisplay.java" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/base/action/DaoEdit.java" filename="com/wellframe/base/action/ApiRequestEdit.java" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/base/action/DaoSave.java" filename="com/wellframe/base/action/ApiRequestSave.java" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/base/action/DaoSearchForm.java" filename="com/wellframe/base/action/ApiRequestSearchForm.java" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/base/action/DaoSearchPerform.java" filename="com/wellframe/base/action/ApiRequestSearchPerform.java" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/base/action/DaoSearchResults.java" filename="com/wellframe/base/action/ApiRequestSearchResults.java" />
+
+    <!-- Ajax Support -->
+    <createfile defaultEntity="ApiRequest" template="public_html/base/DaoAjaxEdit.jsp" filename="../public_html/base/ApiRequestAjaxEdit.jsp" />
+    <createfile defaultEntity="ApiRequest" template="public_html/base/inc_DaoAjaxDisplay.jsp" filename="../public_html/base/inc_ApiRequestAjaxDisplay.jsp" />
+    <createfile defaultEntity="ApiRequest" template="public_html/base/inc_DaoAjaxEdit.jsp" filename="../public_html/base/inc_ApiRequestAjaxEdit.jsp" />
+    <createfile defaultEntity="ApiRequest" template="com/templates/base/action/DaoAjaxSave.java" filename="com/wellframe/base/action/ApiRequestAjaxSave.java" />
+
+</javawriterfile>
+

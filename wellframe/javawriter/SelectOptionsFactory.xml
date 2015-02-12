@@ -7,17 +7,15 @@
 <!-- The file information -->
 
 <entity name="SelectOptionsFactory">
-    <property type="classInfo" package="com.alumni" description="The projects"/>
-    <property type="list" className="User" actualValue="UserKey" displayValue="Username" />
-    <property type="list" className="Event" actualValue="EventKey" displayValue="Name" />
+    <property type="classInfo" package="com.wellframe" description="The projects"/>
 </entity>
 
 
 <!-- =================================================================== -->
 <!-- New Struts based framework                                              -->
 <!-- =================================================================== -->
-<createfile defaultEntity="SelectOptionsFactory" template="com/templates/base/taglib/SelectOptionsFactoryBase.java" filename="com/alumni/base/taglib/SelectOptionsFactoryBase.java" />
-<createfile defaultEntity="SelectOptionsFactory" overwrite="no" template="com/templates/base/taglib/SelectOptionsFactory.java" filename="com/alumni/base/taglib/SelectOptionsFactory.java" />
+<createfile defaultEntity="SelectOptionsFactory" template="com/templates/base/taglib/SelectOptionsFactoryBase.java" filename="com/wellframe/base/taglib/SelectOptionsFactoryBase.java" />
+<createfile defaultEntity="SelectOptionsFactory" overwrite="no" template="com/templates/base/taglib/SelectOptionsFactory.java" filename="com/wellframe/base/taglib/SelectOptionsFactory.java" />
 
 </javawriterfile>
 

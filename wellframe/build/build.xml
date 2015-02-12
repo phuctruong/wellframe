@@ -20,7 +20,7 @@
 
     <target name="clean_libs">
         <delete>
-            <fileset dir="${WEB_LIB_DIR}" includes="*.jar" excludes="zoomlane.jar" />
+            <fileset dir="${WEB_LIB_DIR}" includes="*.jar" excludes="zoomlane.jar,jasen.jar,fastutil-4.3.1-jasen.jar" />
         </delete> 
     </target>
 
@@ -62,29 +62,6 @@
       <delete dir="${CLASSES_DIR}"/>
    </target>
 
-   <!-- =================================================================== -->
-   <!-- Core code for startup                                    -->
-   <!-- =================================================================== -->
-   <target name="tcp_monitor">
-      <echo>Running Test</echo>
-      <java classname="org.apache.axis.utils.tcpmon" fork="yes">
-         <arg value="8082" />
-         <arg value="localhost" />
-         <arg value="8080" />
-         <classpath>
-             <dirset dir="${CLASSES_DIR}">
-                 <include name="**"/>
-             </dirset>
-            <!-- Add Classpath: common libraries -->
-            <fileset dir="${LIB_DIR}">
-               <include name="**"/>
-            </fileset>
-            <fileset dir="${WEB_LIB_DIR}">
-               <include name="**"/>
-            </fileset>
-         </classpath>
-      </java>
-   </target>
 
    <target name="deploy">
       <echo>Deploying to production</echo>
@@ -147,30 +124,13 @@
    </target>
 
    <target name="check_db"><property name="TEST_CLASS" value="com.zoomlane.database.CheckDatabase" /><antcall target="run_test" /></target>
-   <target name="import_users"><property name="TEST_CLASS" value="com.wellframe.util.BatchJobImportUsers" /><antcall target="run_test" /></target>
-   <target name="import_linkedin">
-      <java classname="com.wellframe.util.BatchJobImportLinkedIn" fork="yes" maxmemory="1000M">
-          <sysproperty key="webdriver.chrome.driver" value="../doc/chrome/windows/chromedriver.exe" />
-          <jvmarg value="-XX:MaxPermSize=256m" />
-         <classpath>
-             <dirset dir="${CLASSES_DIR}">
-                 <include name="**"/>
-             </dirset>
-            <!-- Add Classpath: common libraries -->
-            <fileset dir="${LIB_DIR}">
-               <include name="**"/>
-            </fileset>
-            <fileset dir="${WEB_LIB_DIR}">
-               <include name="**"/>
-            </fileset>
-         </classpath>
-      </java>
-    </target>
+
 
    <target name="email"><property name="TEST_CLASS" value="com.wellframe.util.BatchJobEmail" /><antcall target="run_test" /></target>
+   <target name="app_util"><property name="TEST_CLASS" value="com.wellframe.util.AppUtil" /><antcall target="run_test" /></target>
 
    <!-- =================================================================== -->
-   <!-- Backup: test-->
+   <!-- Run Test Jobs  -->
    <!-- =================================================================== -->
    <target name="run_test">
       <echo>Running Test ${TEST_CLASS}</echo>

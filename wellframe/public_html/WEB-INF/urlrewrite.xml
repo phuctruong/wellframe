@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.6//EN" "http://tuckey.org/res/dtds/urlrewrite2.6.dtd">
+<!-- Configuration file for UrlRewriteFilter http://tuckey.org/urlrewrite/ -->
+<urlrewrite>
+
+    <!-- ====== Make parsing stops here for static files and struts-like URI ====== -->
+    <rule><from>^/(admin\/.*)$</from><to>/$1</to></rule>
+    <rule><from>^/(flash\/.*)$</from><to>/$1</to></rule>
+    <rule><from>^/(mock\/.*)$</from><to>/$1</to></rule>
+    <rule><from>^/(base\/.*)$</from><to>/$1</to></rule>
+    <rule><from>^/(img\/.*)$</from><to>/$1</to></rule>
+    <rule><from>^/(css\/.*)$</from><to>/$1</to></rule>
+    <rule><from>^/(js\/.*)$</from><to>/$1</to></rule>
+    <rule><from>^/(_.*)$</from><to>/$1</to></rule>
+    <rule><from>^/(?:.*\/)?([a-zA-Z0-9_\-]*\.do.*)$</from><to>/$1</to></rule>
+    <rule><from>^/([a-zA-Z0-9_\-]*\.txt)$</from><to>/$1</to></rule>
+    <rule><from>^/([a-zA-Z0-9_\-]*\.html)$</from><to>/$1</to></rule>
+    <rule><from>^/([a-zA-Z0-9_\-\/]*\.jsp)(\?.*)?$</from><to>/$1$2</to></rule>
+    <rule><from>^/([a-zA-Z0-9_\-\/]*\.jpg)(\?.*)?$</from><to>/$1$2</to></rule>
+    <rule><from>^/([a-zA-Z0-9_\-\/]*\.png)$</from><to>/$1</to></rule>
+    <rule><from>^/([a-zA-Z0-9_\-\/]*\.gif)$</from><to>/$1</to></rule>
+    <rule><from>^/(files\/.*)$</from><to>/$1</to></rule>
+
+    <!-- == This rule allow browser to retrieve favicon.ico without scanning through all rules because some browsers tend to get favicon.ico from current directory == -->
+    <rule><from>^/.*favicon.ico$</from><to>/favicon.ico</to></rule>
+
+    <!-- ================ Home Page ================= -->
+    <rule><from>^/(\?.*)?$</from><to>/home.do$1</to></rule>
+
+    <rule><from>^/api/spam-filter(\?.*)?$</from><to>/spam-filter.do?$1</to></rule>
+
+
+</urlrewrite>
+

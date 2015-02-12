@@ -1,0 +1,45 @@
+<javawriterfile>
+    <entity name="ApiResponse">
+        <property type="classInfo" package="com.wellframe" className="ApiResponse" baseEntityClass="BaseDao" />
+        <property type="tableInfo" tableName="api_response" />
+        <property type="field" dataType="long" pk="true" functionName="ApiResponseKey" searchType="TextLike" searchDisplayInResults="true" />
+
+        <property type="field" dataType="long" functionName="ApiRequestKey" searchType="TextLike" searchDisplayInResults="true" />
+        <property type="field" dataType="string" functionName="Response" length="text" inputRequired="true" inputType="text" inputSize="30" searchType="TextLike" searchInputSize="30" searchDisplayInResults="false" />
+
+        <property type="field" dataType="date" functionName="LastUpdated" isModifyDate="true" dateFormat="MM/dd/yyyy K:mm a" searchDisplayInResults="true"  />
+        <property type="field" dataType="date" functionName="DateCreated" isCreateDate="true" dateFormat="MM/dd/yyyy hh:mm aa" inputType="text" inputSize="30" javascriptCalendar="basic" searchType="dateRange" searchDisplayInResults="true" />
+    </entity>
+
+
+    <!-- =================================================================== -->
+    <!-- Create necessary files                                              -->
+    <!-- =================================================================== -->
+    <createfile defaultEntity="ApiResponse" template="../sql/sample_data.sql" filename="sql/sample_data_ApiResponse.sql" />
+    <createfile defaultEntity="ApiResponse" template="../sql/mysql_create_table.sql" filename="sql/create_ApiResponse.sql" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/dao/DaoProperties.java" filename="com/wellframe/dao/ApiResponseProperties.java" />
+    <createfile overwrite="no" defaultEntity="ApiResponse" template="com/templates/dao/DynaDao.java" filename="com/wellframe/dao/ApiResponse.java" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/dao/_test/Dao_test.java" filename="com/wellframe/dao/_test/ApiResponse_test.java" />
+
+    <!-- ==================== New Struts implementation =================== -->
+    <createfile defaultEntity="ApiResponse" template="public_html/WEB-INF/daostruts-config.xml" filename="../public_html/WEB-INF/base_tmp/ApiResponse_struts-config.xml" />
+    <createfile defaultEntity="ApiResponse" template="public_html/base/DaoDisplay.jsp" filename="../public_html/base/ApiResponseDisplay.jsp" />
+    <createfile defaultEntity="ApiResponse" template="public_html/base/DaoEdit.jsp" filename="../public_html/base/ApiResponseEdit.jsp" />
+    <createfile defaultEntity="ApiResponse" template="public_html/base/DaoSearch.jsp" filename="../public_html/base/ApiResponseSearch.jsp" />
+    <createfile defaultEntity="ApiResponse" template="public_html/base/DaoSearchResults.jsp" filename="../public_html/base/ApiResponseSearchResults.jsp" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/base/action/DaoDelete.java" filename="com/wellframe/base/action/ApiResponseDelete.java" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/base/action/DaoDisplay.java" filename="com/wellframe/base/action/ApiResponseDisplay.java" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/base/action/DaoEdit.java" filename="com/wellframe/base/action/ApiResponseEdit.java" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/base/action/DaoSave.java" filename="com/wellframe/base/action/ApiResponseSave.java" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/base/action/DaoSearchForm.java" filename="com/wellframe/base/action/ApiResponseSearchForm.java" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/base/action/DaoSearchPerform.java" filename="com/wellframe/base/action/ApiResponseSearchPerform.java" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/base/action/DaoSearchResults.java" filename="com/wellframe/base/action/ApiResponseSearchResults.java" />
+
+    <!-- Ajax Support -->
+    <createfile defaultEntity="ApiResponse" template="public_html/base/DaoAjaxEdit.jsp" filename="../public_html/base/ApiResponseAjaxEdit.jsp" />
+    <createfile defaultEntity="ApiResponse" template="public_html/base/inc_DaoAjaxDisplay.jsp" filename="../public_html/base/inc_ApiResponseAjaxDisplay.jsp" />
+    <createfile defaultEntity="ApiResponse" template="public_html/base/inc_DaoAjaxEdit.jsp" filename="../public_html/base/inc_ApiResponseAjaxEdit.jsp" />
+    <createfile defaultEntity="ApiResponse" template="com/templates/base/action/DaoAjaxSave.java" filename="com/wellframe/base/action/ApiResponseAjaxSave.java" />
+
+</javawriterfile>
+

@@ -18,12 +18,12 @@ function findAll(action) {
 <!-- Execution of the code that actually builds the specific tree -->
 <SCRIPT TYPE="text/javascript">
   USETEXTLINKS = 1;
-  var imageSettingsBug = new ImageSettings("icon_bug.gif", "icon_bug.gif",
+  var imageSettingsWellFrame = new ImageSettings("wellframe_bullet.png", "wellframe_bullet.png",
                                          "minus_sign.gif", "minus_sign_last.gif",
                                          "plus_sign.gif", "plus_sign_last.gif",
                                          "node_connect.gif", "node_connect_last.gif",
                                          "indent_spacer.gif", "vertical_line.gif",
-                                         "icon_bug.gif", "../images/tree_control/");
+                                         "wellframe_bullet.png", "../images/tree_control/");
   var imageSettingsNote = new ImageSettings("folder_opened.gif", "folder_closed.gif",
                                             "minus_sign.gif", "minus_sign_last.gif",
                                             "plus_sign.gif", "plus_sign_last.gif",
@@ -93,14 +93,14 @@ function findAll(action) {
   
 </script>
 <SCRIPT TYPE="text/javascript" id="tree">
-level_0 = gFld("<font class=leftnav>Admin</font>", "instructions.html", imageSettingsBug, "right")
+level_0 = gFld("<font class=leftnav>Spam Filter</font>", "instructions.html", imageSettingsWellFrame, "right")
 
-level_1000 = insFld(level_0, gFld("<font class=leftnav>Manage Users</font>", "", imageSettingsNote));
-insDoc(level_1000, gLnk("right", "<font class=leftnav>User</font>", "../base/displaySearchUser.do", imageSettingsText))
+level_1000 = insFld(level_0, gFld("<font class=leftnav>Administration</font>", "", imageSettingsNote));
+insDoc(level_1000, gLnk("right", "<font class=leftnav>API Test Page</font>", "../spam-filter-api-test.do", imageSettingsText))
 
-level_2000 = insFld(level_0, gFld("<font class=leftnav>Manage Events</font>", "", imageSettingsNote));
-insDoc(level_2000, gLnk("right", "<font class=leftnav>Event</font>", "../base/displaySearchEvent.do", imageSettingsText))
-
+level_2000 = insFld(level_0, gFld("<font class=leftnav>Database</font>", "", imageSettingsNote));
+insDoc(level_2000, gLnk("right", "<font class=leftnav>API Requests</font>", "../base/displaySearchApiRequest.do", imageSettingsText))
+insDoc(level_2000, gLnk("right", "<font class=leftnav>API Responses</font>", "../base/displaySearchApiResponse.do", imageSettingsText))
 
 
 </SCRIPT>

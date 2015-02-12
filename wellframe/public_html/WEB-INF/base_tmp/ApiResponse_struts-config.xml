@@ -1,0 +1,37 @@
+      <!-- =================== ApiResponse Actions =========================== -->
+      <action path="/displayApiResponse" type="com.wellframe.base.action.ApiResponseDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/ApiResponseDisplay.jsp" contextRelative="true"/>
+      </action>
+      <action path="/deleteApiResponse" type="com.wellframe.base.action.ApiResponseDelete" name="NO_FORM">
+         <forward name="SUCCESS" path="/base/displaySearchResultsApiResponse.do" contextRelative="true"/>
+      </action>
+      <action path="/displayAjaxEditApiResponse" type="com.wellframe.base.action.ApiResponseDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/ApiResponseAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/ajax-edit-apiResponse" type="com.wellframe.base.action.ApiResponseDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/inc_ApiResponseAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/ajax-save-apiResponse" type="com.wellframe.base.action.ApiResponseAjaxSave" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/inc_ApiResponseAjaxDisplay.jsp" contextRelative="true"/>
+         <forward name="FAIL" path="/base/inc_ApiResponseAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/displayEditApiResponse" type="com.wellframe.base.action.ApiResponseEdit" name="VO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/ApiResponseEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/saveApiResponse" type="com.wellframe.base.action.ApiResponseSave" name="VO_FORM">
+         <forward name="SUCCESS" path="/base/ApiResponseEdit.jsp" contextRelative="true"/>
+         <forward name="FAIL" path="/base/ApiResponseEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/displaySearchApiResponse" type="com.wellframe.base.action.ApiResponseSearchForm" name="VO_SEARCH_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/ApiResponseSearch.jsp" contextRelative="true"/>
+      </action>
+      <action path="/redisplaySearchApiResponse" type="com.wellframe.base.action.ApiResponseSearchForm" name="VO_SEARCH_FORM"  parameter="redisplay">
+         <forward name="DISPLAY_PAGE" path="/base/ApiResponseSearch.jsp" contextRelative="true"/>
+      </action>
+      <action path="/performSearchApiResponse" type="com.wellframe.base.action.ApiResponseSearchPerform" name="VO_SEARCH_FORM">
+         <forward name="FAIL" path="/base/redisplaySearchApiResponse.do" contextRelative="true"/>
+         <forward name="DISPLAY_SEARCH_RESULTS" path="/base/displaySearchResultsApiResponse.do" contextRelative="true"/>
+      </action>
+      <action path="/displaySearchResultsApiResponse" type="com.wellframe.base.action.ApiResponseSearchResults" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/ApiResponseSearchResults.jsp" contextRelative="true"/>
+      </action>

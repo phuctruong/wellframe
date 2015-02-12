@@ -1,7 +1,6 @@
 <%@ include file="/admin/security.jsp" %>
 
 <html>
-<LINK REL=STYLESHEET TYPE="text/css" HREF="./_css/bugtracker.css">
 <head>
 <title>Administration</title>
 </head>

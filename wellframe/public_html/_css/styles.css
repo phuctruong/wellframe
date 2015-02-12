@@ -25,10 +25,10 @@ time, mark, audio, video {
 }
 
 body {
-        background-color: #990000;
 	font-family: Arial, 'Trebuchet MS', Verdana, sans-serif;
 	font-size: 15px;
 	color: #444444;
+	padding: 20px;
 }
 
 /* CONTAINER */
@@ -277,23 +277,20 @@ h1 {
 	font-size: 1.3em;
 	font-weight: bold;
         background: url("../images/harvard/h1_topline.png") 0 0 no-repeat;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 }
 
 h2 {
 	font-size: 1.1em;
 	font-weight: bold;
         background: url("../images/harvard/h2_bullet.png") 0 5px no-repeat;
-	padding-left: 15px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 }
 h3 {
         font-size: 1.1em;
         font-weight: bold;
         background: url("../images/harvard/h3_arrow.png") 0px 5px no-repeat;
-	padding-left: 14px;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 }
 h4 {
         font-size: 1.1em;
@@ -357,7 +354,7 @@ div.error li {
 
 .input-300 input, .input select {width: 300px}
 
-input, select, textarea {margin-bottom: 20px; border: black solid 1px}
+input, select, textarea {margin-bottom: 20px; border: grey solid 1px}
 
 form h1 {margin-bottom: 20px}
 form h2 {margin-bottom: 20px}

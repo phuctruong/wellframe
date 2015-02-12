@@ -1,0 +1,37 @@
+      <!-- =================== User Actions =========================== -->
+      <action path="/displayUser" type="com.wellframe.base.action.UserDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/UserDisplay.jsp" contextRelative="true"/>
+      </action>
+      <action path="/deleteUser" type="com.wellframe.base.action.UserDelete" name="NO_FORM">
+         <forward name="SUCCESS" path="/base/displaySearchResultsUser.do" contextRelative="true"/>
+      </action>
+      <action path="/displayAjaxEditUser" type="com.wellframe.base.action.UserDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/UserAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/ajax-edit-user" type="com.wellframe.base.action.UserDisplay" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/inc_UserAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/ajax-save-user" type="com.wellframe.base.action.UserAjaxSave" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/inc_UserAjaxDisplay.jsp" contextRelative="true"/>
+         <forward name="FAIL" path="/base/inc_UserAjaxEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/displayEditUser" type="com.wellframe.base.action.UserEdit" name="VO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/UserEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/saveUser" type="com.wellframe.base.action.UserSave" name="VO_FORM">
+         <forward name="SUCCESS" path="/base/UserEdit.jsp" contextRelative="true"/>
+         <forward name="FAIL" path="/base/UserEdit.jsp" contextRelative="true"/>
+      </action>
+      <action path="/displaySearchUser" type="com.wellframe.base.action.UserSearchForm" name="VO_SEARCH_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/UserSearch.jsp" contextRelative="true"/>
+      </action>
+      <action path="/redisplaySearchUser" type="com.wellframe.base.action.UserSearchForm" name="VO_SEARCH_FORM"  parameter="redisplay">
+         <forward name="DISPLAY_PAGE" path="/base/UserSearch.jsp" contextRelative="true"/>
+      </action>
+      <action path="/performSearchUser" type="com.wellframe.base.action.UserSearchPerform" name="VO_SEARCH_FORM">
+         <forward name="FAIL" path="/base/redisplaySearchUser.do" contextRelative="true"/>
+         <forward name="DISPLAY_SEARCH_RESULTS" path="/base/displaySearchResultsUser.do" contextRelative="true"/>
+      </action>
+      <action path="/displaySearchResultsUser" type="com.wellframe.base.action.UserSearchResults" name="NO_FORM">
+         <forward name="DISPLAY_PAGE" path="/base/UserSearchResults.jsp" contextRelative="true"/>
+      </action>

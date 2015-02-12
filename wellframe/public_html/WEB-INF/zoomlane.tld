@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglib_1_1.dtd">
+
+<!-- a tag library descriptor -->
+
+<taglib>
+   <tlibversion>1.0</tlibversion>
+   <jspversion>1.1</jspversion>
+   <shortname>merge</shortname>
+   <uri></uri>
+   <info>Merge tag library</info>
+
+  <tag>
+    <name>token</name>
+    <tagclass>com.zoomlane.customtag.MergeTokenTag</tagclass>
+    <bodycontent>JSP</bodycontent>	
+    <info>Merges text with token</info>
+	<attribute>
+		<name>token</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>replaceText</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>fromRows</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>displayIfNull</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+  </tag>
+  
+  <tag>
+    <name>text</name>
+    <tagclass>com.zoomlane.customtag.MergeTextTag</tagclass>
+    <bodycontent>JSP</bodycontent>	
+    <info>Merges non dynamic text</info>
+	<attribute>
+		<name>replaceText</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>withValue</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	
+  </tag>
+
+  <tag>
+    <name>remove</name>
+    <tagclass>com.zoomlane.customtag.MergeRemoveTag</tagclass>
+    <bodycontent>JSP</bodycontent>	
+    <info>Removes a specified section</info>
+	<attribute>
+		<name>ifTokenExists</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>fromRows</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>	
+  </tag>
+
+  <tag>
+    <name>rows</name>
+    <tagclass>com.zoomlane.customtag.MergeRowsTag</tagclass>
+    <bodycontent>JSP</bodycontent>	
+    <info>Loops through merge rows</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>displayIfNull</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>fromRows</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>alternateColors</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>replaceColor</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	
+  </tag>
+
+
+  <tag>
+    <name>flushDebugLogs</name>
+    <tagclass>com.zoomlane.customtag.MergeFlushDebugLogsTag</tagclass>
+    <bodycontent>JSP</bodycontent>	
+    <info>Prints out all debug logs</info>
+  </tag>
+
+  
+</taglib>
+
+
+
